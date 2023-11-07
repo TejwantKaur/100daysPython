@@ -39,7 +39,7 @@ while not endOfGame:
       print("You Lose")
 
   print(f"{' '.join(display)}") 
-  # display includes _ so (' ') is space, we adding space in _ so out put _ _ _ _ _
+  # display includes _ so (' ') is space, we adding space in _ so out put _ _ _ _ _ _
 
   if '_' not in display:
     endOfGame = True
