@@ -29,7 +29,6 @@ while not endOfGame:
       endOfGame=True
       print("You Lose")
     
-
   print(display)
 
   if '_' not in display:

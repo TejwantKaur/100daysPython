@@ -12,6 +12,7 @@ print(display)
 
 endOfGame = False
 print()
+
 while not endOfGame:
   guess = input("Guess a letter: ").lower()
   for position in range(word_length):
