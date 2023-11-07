@@ -1,9 +1,15 @@
 import random
+import os
+
+def clear():
+    if os.name == 'nt':  # For Windows
+        os.system('cls')
+    else:  # For Unix-like systems (Linux, macOS)
+        os.system('clear')
 
 from hangman_words import words
 
 choice = random.choice(words)
-print(f"Pssst, the solution is {choice} ")
 display = []
 word_length = len(choice)
 
@@ -20,7 +26,8 @@ print(logo)
 print()
 while not endOfGame:
   guess = input("Guess a letter: ").lower()
-
+  clear()
+  
   # already guessed
   if guess in display:
     print(f"You have already guessed {guess} ")
@@ -36,7 +43,8 @@ while not endOfGame:
     lives -= 1
     if lives == 0:
       endOfGame=True
-      print("You Lose")
+      print("\nYou Lose")
+      print(f"Pssst, the solution was {choice} ")
 
   print(f"{' '.join(display)}") 
   # display includes _ so (' ') is space, we adding space in _ so out put _ _ _ _ _ _
@@ -46,5 +54,3 @@ while not endOfGame:
     print("You win")
 
   print(stages[lives])
-
-print(f"Pssst, the solution is {choice} ")
