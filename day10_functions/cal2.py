@@ -20,6 +20,7 @@ operations = {
 }
 
 def calculator():
+  
   num1 = float(input("Enter num1: "))
   for op in operations:
     print(op)
@@ -27,7 +28,7 @@ def calculator():
   res = True
   
   while res:
-    sym = input("Enter operator: ")
+    sym = input("Pick an operator: ")
     num2 = float(input("What's the next num? "))
   
     operator = operations[sym]
@@ -42,8 +43,6 @@ def calculator():
       res = False
       clear()
       calculator()
-
-
 
 calculator()
   
