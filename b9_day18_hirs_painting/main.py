@@ -33,22 +33,30 @@ tim.speed("fastest")
 
 numofdots = 100
 
-def upline():
-    tim.left(90)
-    # tim.penup()
-    tim.forward(30)
-    tim.left(90)
-    tim.forward(30 * 16)
-    tim.right(180)
-    # tim.pendown()
 
-for _ in range(15):
-    for _ in range(16):
-        tim.dot(20, random.choice(color_list)) #--> radius = 20
-        # tim.penup()
-        tim.forward(30)
-        # tim.pendown()
-    upline()
+def upline():
+    tim.setheading(90)
+    tim.forward(50)
+    tim.setheading(180)
+    tim.forward(50 * 10)
+    tim.setheading(0)
+
+
+for dots in range(1, numofdots+1):
+    tim.dot(20, random.choice(color_list))
+    tim.forward(50)
+
+    if dots % 10 == 0:
+        upline()
+
+
+# for _ in range(15):
+#     for _ in range(16):
+#         tim.dot(20, random.choice(color_list)) #--> radius = 20
+#         # tim.penup()
+#         tim.forward(30)
+#         # tim.pendown()
+#     upline()
 
 
 
