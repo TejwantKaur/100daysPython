@@ -4,6 +4,7 @@ import colorgram
 colors = colorgram.extract('image.jpg', 6)
 
 rgb_colors = []
+# rgb
 for color in colors:
     rgb_colors.append(color.rgb)
 
