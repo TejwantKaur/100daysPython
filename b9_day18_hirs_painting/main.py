@@ -26,6 +26,8 @@ sc = Screen()
 colormode(255)
 
 tim.penup()
+tim.hideturtle()
+
 tim.setheading(225) # angle
 tim.forward(315)
 tim.setheading(0)
