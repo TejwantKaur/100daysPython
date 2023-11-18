@@ -34,10 +34,17 @@ while game_is_on:
         scoreboard_obj.inc_score()
 
     # 20 - width of snake
-    if (snake_obj.head.xcor() > 290 or snake_obj.head.ycor() > 300
-            or snake_obj.head.xcor() < -300 or snake_obj.head.ycor() < -290):
+    # collision with wall
+    if (snake_obj.head.xcor() > 290 or snake_obj.head.xcor() < -280 or snake_obj.head.ycor() > 290 or snake_obj.head.ycor() < -280):
         game_is_on = False
         scoreboard_obj.game_over()
 
+#   detecting collision with tail
+    for tur in snake_obj.turtles:
+        if tur == snake_obj.head:
+            pass
+        elif snake_obj.head.distance(tur) < 10:
+            game_is_on = False
+            scoreboard_obj.game_over()
 
 sc.exitonclick()
