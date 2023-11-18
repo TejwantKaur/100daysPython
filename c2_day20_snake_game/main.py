@@ -1,6 +1,7 @@
 from turtle import Screen
 from snake import Snake
 from food import Food
+from scoreBoard import ScoreBoard
 import time
 
 sc = Screen()
@@ -12,6 +13,7 @@ sc.tracer(0) #to stop animation
 
 snake = Snake()
 food = Food()
+score = ScoreBoard()
 
 sc.listen()
 sc.onkey(snake.up, "Up")
@@ -28,6 +30,7 @@ while game_is_on:
     # colision with food
     if(snake.head.distance(food) < 15):
         food.refresh();
+        score.inc_score()
 
     # game_is_on = False
 

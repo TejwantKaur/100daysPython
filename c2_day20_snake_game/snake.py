@@ -13,6 +13,7 @@ class Snake:
         self.create_snake()
         self.head = self.turtles[0]
 
+
     def create_snake(self):
         for pos in POSITIONS:
             new_turtle = Turtle("square")
